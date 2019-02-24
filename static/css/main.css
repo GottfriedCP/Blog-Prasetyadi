@@ -1,0 +1,106 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+img#brand {
+    height: 1rem;
+}
+
+nav.navbar a.nav-link {
+    font-size: 90%;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+div#front-image {
+    height: 420px;
+    max-height: 55vh;
+    width: auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul#articles {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#articles li:hover {
+    background-color: #fbe9e7;
+}
+
+ul#articles li h2 a {
+    color: #d84315;
+}
+
+ul#articles li h2 a:hover {
+    color: #d84315;
+    text-decoration: underline;
+}
+
+div#hot-articles, div#tag-list, div#category-list {
+    border: .1rem grey dotted;
+    margin-bottom: .5rem;
+    padding: .8rem;
+}
+
+div#hot-articles ol li a, div#category-list ul li a {
+    color: black;
+}
+
+div#tag-list a {
+    color: #d84315;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+div#tag-list a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* Images in article page and article creation */
+.markdownx-preview img, article div.content img {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 85vw;
+}
+
+div.article-detail {
+    border-bottom: .15rem #d84315 dotted;
+}
+
+div.article-detail i.fas, div.article-detail i.far {
+    padding-left: 0.3rem;
+}
+
+div.article-detail a, div.article-detail-bottom a {
+    color: black;
+}
+
+div.article-detail-bottom {
+    border: .1rem solid #bdbdbd;
+    padding: .7rem;
+    padding-bottom: 1rem;
+}
+
+div.article-detail-bottom a.tag {
+    border: .1rem solid grey;
+    border-radius: 3px;
+    color: black;
+    padding: 0 .5rem;
+}
+
+form#login-form {
+    max-width: 480px;
+    margin: 10vh auto;
+}
+
+footer#footer {
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 83%;
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+localhost:8000/
+localhost:8000/about/
+localhost:8000/2019/exam-grade-for-x240/
+localhost:8000/2019/nunc-at-turpis-id-enim-aliquet-lacinia/
+localhost:8000/2019/fusce-vitae-tempor-leo/
+localhost:8000/2019/nulla-nec-tristique-erat/
+localhost:8000/2019/proin-euismod-ut-justo-vitae-vehicula/
+localhost:8000/2019/cras-non-quam-arcu/
+localhost:8000/2018/cupiditate-laboriosam-nihil/
+localhost:8000/2018/ut-enim-ad-minim/

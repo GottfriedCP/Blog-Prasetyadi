@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_block %}
+    <link rel="stylesheet" href="{% static 'blog/css/tag-create-edit.css' %}">
+{% endblock %}
+
+{% block title_block %}Manage Tags - Prasetyadi{% endblock %}
+
+{% block body_block %}
+<form id="tag-create-edit" method="POST" action="{% url 'blog:tag-create' %}" class="my-3">
+    <h3>Create new tag</h3>
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-primary" type="submit" style="display:block;">Create</button>
+</form>
+<div id="existing-tags">
+    Existing tags:
+    <ul>
+        {% for tag in tags %}
+        <li>{{ tag.name }} <a class="btn btn-light btn-sm" href="{{ tag.get_edit_url }}">edit</a></li></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

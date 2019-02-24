@@ -1,0 +1,79 @@
+article div.content {
+    font-size: 1.09rem;
+}
+
+article div.content h2 {
+    border-bottom: .1rem #d8d8d8 dotted;
+}
+
+/* Blockquote up to three levels */
+article div.content blockquote {
+    font-size: 1.4rem;
+    color: #6d6d6d;
+}
+
+article div.content > blockquote {
+    padding: .1rem 3rem;
+}
+
+article div.content > blockquote > blockquote {
+    padding-left: 2rem;
+}
+
+article div.content > blockquote > blockquote > blockquote {
+    padding-left: 2rem;
+}
+/* END Blockquote */
+
+/* Disabled in favor of highlightjs
+article div.content pre {
+    background-color: #f2f2f2;
+    padding: .5rem .25rem;
+    display: block;
+    overflow-x: auto;
+}*/
+
+/* Table in the article */
+article div.content table {
+    display: block;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+}
+
+article div.content table th, article div.content table td {
+    padding: .2rem;
+    padding-right: .5rem;
+}
+
+section#comment {
+    margin-top: 5vh;
+}
+
+/* Back to Top button */
+button#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #d84315;
+    color: white;
+    cursor: pointer;
+    padding: .7rem;
+    border-radius: 3px;
+}
+
+button#backToTopBtn:hover {
+    background-color: #333;
+}
+
+/* Admin options in article page */
+div#admin {
+    border: .1rem grey dotted;
+    margin-bottom: 1vh;
+    padding: .3rem;
+}

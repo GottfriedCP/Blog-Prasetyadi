@@ -1,0 +1,62 @@
+form#article-create-edit label {
+    display: block;
+    margin-top: 1rem;
+}
+
+form#article-create-edit textarea#id_summary {
+    height: 30vh;
+    width: 100%;
+}
+
+form#article-create-edit div.markdownx textarea {
+    height: 70vh;
+    width: 100%;
+}
+
+form#article-create-edit span.helptext {
+    display: block;
+}
+
+ul.errorlist {
+    color: red;
+    font-size: .8rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.markdownx-preview {
+    margin: 7vh 0;
+}
+
+/* table in markdown preview */
+.markdownx-preview table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.markdownx-preview pre {
+    background-color: #f2f2f2;
+    padding: .5rem .25rem;
+    display: block;
+    overflow-x: auto;
+}
+
+/* Blockquote up to three levels */
+.markdownx-preview blockquote {
+    font-size: 1.2rem;
+}
+
+.markdownx-preview > blockquote {
+    padding: .1rem 1rem;
+}
+
+.markdownx-preview > blockquote > blockquote {
+    padding-left: 1rem;
+}
+
+.markdownx-preview > blockquote > blockquote > blockquote {
+    padding-left: 1rem;
+}
+/* END Blockquote */

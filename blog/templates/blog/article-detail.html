@@ -1,0 +1,10 @@
+<div class="article-detail small py-2 mb-5">
+    <i class="fas fa-calendar"></i>
+    {{ art.date_created|date:"d M Y H:i" }}
+    {% if art.comment_enabled and not debug %}
+    <i class="fas fa-comment"></i>
+    <a href="{{ art.get_absolute_url }}#disqus_thread">Comments</a>
+    {% endif %}
+    <i class="fas fa-eye"></i>
+    {{ art.view_count }} views
+</div>

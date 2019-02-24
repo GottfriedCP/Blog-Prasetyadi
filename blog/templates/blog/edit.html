@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_block %}
+    <link rel="stylesheet" href="{% static 'blog/css/create-edit.css' %}">
+    {{ form.media }}
+{% endblock %}
+
+{% block title_block %}Edit Article - Prasetyadi{% endblock %}
+
+{% block body_block %}
+    <h1>Edit article</h1>
+    <form id="article-create-edit" method="POST" action="{% url 'blog:edit' year=art_year slug=art_slug %}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+        <a href="{{ art.get_absolute_url }}" class="btn btn-secondary btn-block" role="button">Discard and go back</a>
+    </form>
+{% endblock %}

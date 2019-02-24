@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_block %}
+    <link rel="stylesheet" href="{% static 'blog/css/tag-create-edit.css' %}">
+{% endblock %}
+
+{% block title_block %}Manage Categories - Prasetyadi{% endblock %}
+
+{% block body_block %}
+<form id="category-create-edit" method="POST" action="{% url 'blog:category-create' %}" class="my-3">
+    <h3>Create new category</h3>
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-primary" type="submit" style="display:block;">Create</button>
+</form>
+<div id="existing-categories">
+    Existing categories:
+    <ul>
+        {% for cat in cats %}
+        <li>{{ cat.name }} <a class="btn btn-light btn-sm" href="{{ cat.get_edit_url }}">edit</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+form#tag-create-edit label,
+form#category-create-edit label {
+    display: block;
+}
+
+form#tag-create-edit button,
+form#category-create-edit button {
+    margin-top: 1rem;
+}
+
+ul.errorlist {
+    color: red;
+    font-size: .8rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

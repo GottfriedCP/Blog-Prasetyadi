@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_block %}
+    <link rel="stylesheet" href="{% static 'blog/css/tag-create-edit.css' %}">
+{% endblock %}
+
+{% block title_block %}Edit Category - Prasetyadi{% endblock %}
+
+{% block body_block %}
+<form id="category-create-edit" method="POST" action="{% url 'blog:category-edit' name=cat_name %}" class="my-3">
+    <h3>Edit category</h3>
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-primary" type="submit" style="display:block;">Apply</button>
+</form>
+{% endblock %}

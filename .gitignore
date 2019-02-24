@@ -1,0 +1,15 @@
+db.sqlite3
+
+.vscode
+
+static_root
+media_root
+
+__pycache__
+.pyc
+migrations
+
+.env
+passenger_wsgi.py
+tmp
+public

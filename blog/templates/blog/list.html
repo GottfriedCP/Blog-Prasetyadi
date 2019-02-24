@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title_block %}Manage Articles - Prasetyadi{% endblock %}
+
+{% block body_block %}
+<h1 class="pb-2">All articles</h1>
+<div class="table-responsive">
+    <table class="table table-hover table-sm">
+        <caption class="small">Ordered by creation date (newest first)<br>Yellow is unpublished</caption>
+        <thead>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Created on</th>
+            <th>Views</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for art in arts %}
+            <tr class="{% if not art.published %}bg-warning{% endif %}">
+                <td><a href="{{ art.get_absolute_url }}">{{ art.title }}</a></td>
+                <td title="{{ art.summary }}">{{ art.summary|truncatechars:100 }}</td>
+                <td>{{ art.date_created|date:"d-M-Y" }}</td>
+                <td>{{ art.view_count }}</td>
+                <td class="small">
+                    <span>
+                        <a href="{% url 'blog:edit' year=art.date_created.year slug=art.slug %}" class="btn btn-light btn-sm" role="button">Edit</a>
+                        <form method="POST" action="{% url 'blog:publish' %}" style="display: inline;">
+                            {% csrf_token %}
+                            <input name="article-year" type="hidden" value="{{ art.date_created.year }}">
+                            <input name="article-slug" type="hidden" value="{{ art.slug }}">
+                            <input name="origin-path" type="hidden" value="{{ request.build_absolute_uri }}">
+                            <input type="submit" class="btn btn-light btn-sm" role="button" value="{% if art.published %}Unpublish{% else %}Publish{% endif %}">
+                        </form>
+                        <a href="{% url 'blog:delete-confirm' year=art.date_created.year slug=art.slug %}" class="btn btn-danger btn-sm" role="button">Delete</a>
+                    </span>
+                </td>
+            </tr>
+            {% empty %}
+            No article found.
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% if arts %}
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if arts.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ arts.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        <li class="page-item disabled"><span class="page-link">Page {{ arts.number }} of {{ arts.paginator.num_pages }}</span></li>
+        {% if arts.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ arts.next_page_number }}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ arts.paginator.num_pages }}">Last</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+{% endblock %}

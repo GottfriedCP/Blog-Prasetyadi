@@ -1,0 +1,41 @@
+<div id="hot-articles" class="mb-3">
+    <h5 class="pb-3" style="text-align:center;">POPULAR ARTICLES</h5>
+    <ol id="popular-articles">
+        {% for art in pop_arts %}
+        <li>
+            <a href="{{ art.get_absolute_url }}" title="viewed by {{ art.view_count }}">{{ art.title }}</a>
+        </li>
+        {% empty %}
+        nothing
+        {% endfor %}
+    </ol>
+</div>
+
+<div id="tag-list" class="mb-3">
+    <h5 class="pb-2" style="text-align:center;">TAGS</h5>
+    <div>
+        {% for tag, weight in tags %}
+            <a href="{{ tag.get_absolute_url }}" title="{{ tag.total }} articles" style="font-size:{{ weight }}rem;">{{ tag.name }}</a>
+        {% empty %}
+        nothing
+        {% endfor %}
+    </div>
+</div>
+
+<div id="category-list">
+    <h5 class="pb-2" style="text-align:center;">CATEGORIES</h5>
+    <ul>
+        {% for cat in cats %}
+        <li style="list-style-type:none;">
+            <i class="fas fa-folder"></i>
+            <a href="{{ cat.get_absolute_url }}" title="{{ cat.total }} articles"> {{ cat.name }}</a>
+        </li>
+        {% empty %}
+        nothing
+        {% endfor %}
+    </ul>
+</div>
+
+<div id="rss-atom" class="pr-3" style="text-align:right;">
+    <a href="/feed/rss/">RSS</a> &vert; <a href="/feed/atom/">Atom</a>
+</div>
