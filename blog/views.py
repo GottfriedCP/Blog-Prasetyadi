@@ -351,10 +351,10 @@ def _update_sitemap(hostname):
     hostname: just use 'request.get_host()'
     """
     with open(settings.SITEMAP_LOCATION, 'w') as sitemap:
-        homepage = '{}/'.format(hostname)
+        homepage = 'https://{}/'.format(hostname)
         about_page = '{}about/'.format(homepage)
         sitemap.write('{}\n{}\n'.format(homepage, about_page))
         
         artsx = Article.objects.filter(published=True)[:9998]
         for artx in artsx:
-            sitemap.write('{}{}\n'.format(hostname, artx.get_absolute_url()))
+            sitemap.write('https://{}{}\n'.format(hostname, artx.get_absolute_url()))
