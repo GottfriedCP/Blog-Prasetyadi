@@ -32,6 +32,9 @@
     {% block header_block %}{% endblock %}
 </head>
 <body>
+    {% block header_image_block %}
+    {% endblock %}
+
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d84315;">
         <a class="navbar-brand" href="/"><img id="brand" src="{% static 'img/gprasetyadi.png' %}" title="back to front page"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -72,9 +75,6 @@
             </form>
         </div>
     </nav>
-
-    {% block header_image_block %}
-    {% endblock %}
 
     <div class="container py-4">
         {% block body_block %}
