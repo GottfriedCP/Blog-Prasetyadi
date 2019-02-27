@@ -2,7 +2,7 @@
     <h5 class="pb-3" style="text-align:center;">POPULAR ARTICLES</h5>
     <ol id="popular-articles">
         {% for art in pop_arts %}
-        <li class="pb-2"
+        <li class="pb-2">
             <a href="{{ art.get_absolute_url }}" title="viewed by {{ art.view_count }}">{{ art.title }}</a>
         </li>
         {% empty %}
