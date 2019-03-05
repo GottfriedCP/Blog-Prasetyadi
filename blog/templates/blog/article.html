@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block header_block %}
+    <link rel="canonical" href="{{ canonical }}">
     <link rel="stylesheet" href="{% static 'blog/css/article.css' %}">
     <!-- Social media meta tag for previewing contents -->
     <meta property="og:image" content="{% static 'img/og-image.jpg' %}">

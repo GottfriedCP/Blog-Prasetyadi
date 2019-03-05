@@ -34,6 +34,7 @@ def home(request):
     page = request.GET.get('page')
     arts = paginator.get_page(page)
     return render(request, 'blog/home.html', {
+        'canonical': 'https://{}/'.format(request.get_host()),
         'arts': arts,
         'pop_arts': _get_hot_articles(),
         'tags': tags,
@@ -53,6 +54,7 @@ def article(request, year, slug):
         'art_content_html': art_content_html,
         'pop_arts': _get_hot_articles(),
         'debug': settings.DEBUG,
+        'canonical': 'https://{}/'.format(request.get_host()),
     })
     # update article's view count using cookies
     if request.COOKIES.get(art.slug) is None and not request.user.is_authenticated:

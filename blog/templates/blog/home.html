@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block header_block %}
+<link rel="canonical" href="{{ canonical }}">
+{% endblock %}
+
 {% block header_image_block %}
 <div id="front-image" style="background-image: url('{% static 'img/front-image.jpg' %}');">
 </div>
