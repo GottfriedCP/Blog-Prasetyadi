@@ -54,7 +54,7 @@ def article(request, year, slug):
         'art_content_html': art_content_html,
         'pop_arts': _get_hot_articles(),
         'debug': settings.DEBUG,
-        'canonical': 'https://{}/'.format(request.get_host()),
+        'canonical': 'https://{}{}'.format(request.get_host(), art.get_absolute_url()),
     })
     # update article's view count using cookies
     if request.COOKIES.get(art.slug) is None and not request.user.is_authenticated:
